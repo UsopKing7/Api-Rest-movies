@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { json, Router } from 'express';
+import { Router } from 'express';
 import apimovies from '../movies.json' with { type: 'json'}
 
 const router = Router()
@@ -57,7 +57,14 @@ router.get('/:id', (req, res) => {
   }
 })
 
+router.post('/', (req, res) => {
+  const newPeli = req.body
+  apimovies.push(newPeli)
+  res.status(201).json(newPeli)
+})
+
 router.use((req, res) => {
   res.status(404).send('<h1> Error 404 Not Font </h1>')
 })
 export default router
+

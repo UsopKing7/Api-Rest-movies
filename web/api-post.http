@@ -1,0 +1,32 @@
+### Para crear una nueva pelicula
+POST http://localhost:3333/movies
+Content-Type: application/json
+
+[
+  {
+    "id": "05bd5fd1-f347-45e6-8ec0-59b7f11c2aec",
+    "name": "Hardcore Henry",
+    "alternate_names": [],
+    "species": "human",
+    "gender": "male",
+    "house": "Ravenclaw",
+    "dateOfBirth": null,
+    "yearOfBirth": null,
+    "wizard": true,
+    "ancestry": "",
+    "eyeColour": "",
+    "hairColour": "",
+    "wand": {
+      "wood": "",
+      "core": "",
+      "length": null
+    },
+    "patronus": "",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false,
+    "actor": "",
+    "alternate_actors": [],
+    "alive": true,
+    "image": ""
+  }
+]
