@@ -10,3 +10,5 @@ GET http://localhost:3333/movies?gender=female
 ### para recuperar por año
 GET http://localhost:3333/movies?yearOfBirth=1980
 
+### para recuperar por name 
+GET http://localhost:3333/movies?name=Stewart%20Ackerley
