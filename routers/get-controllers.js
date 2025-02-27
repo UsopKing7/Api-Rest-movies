@@ -18,7 +18,7 @@ routerGet.get('/', (req, res) => {
       }
 
     } else if (yearOfBirth){
-      const year = parseInt(yearOfBirth, 10)
+      const year = parseInt(yearOfBirth)
       const filtrarYears = apimovies.filter(video => video.yearOfBirth === year && video.yearOfBirth !== null)
       if (filtrarYears) {
         res.status(200).json(filtrarYears)
