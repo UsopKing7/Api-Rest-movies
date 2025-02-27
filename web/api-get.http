@@ -1,0 +1,12 @@
+### para recuperar toda la Api => Get
+GET http://localhost:3333/movies
+
+### para recuperar por Id
+GET http://localhost:3333/movies/4c7e6819-a91a-45b2-a454-f931e4a7cce3
+
+### para recuperar por Genero
+GET http://localhost:3333/movies?gender=female
+
+### para recuperar por año
+GET http://localhost:3333/movies?yearOfBirth=1980
+
