@@ -2,9 +2,9 @@
 import { json, Router } from 'express';
 import apimovies from '../movies.json' with { type: 'json'}
 
-const routerGet = Router()
+const router = Router()
 
-routerGet.get('/', (req, res) => {
+router.get('/', (req, res) => {
   try {
     console.log('request recivida...', req.url)
 
@@ -46,7 +46,7 @@ routerGet.get('/', (req, res) => {
   }
 })
 
-routerGet.get('/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   console.log('request recivida...', req.url)
   const { id } = req.params
   const video = apimovies.find(video => video.id === id)
@@ -57,7 +57,7 @@ routerGet.get('/:id', (req, res) => {
   }
 })
 
-routerGet.use((req, res) => {
+router.use((req, res) => {
   res.status(404).send('<h1> Error 404 Not Font </h1>')
 })
-export default routerGet
+export default router
