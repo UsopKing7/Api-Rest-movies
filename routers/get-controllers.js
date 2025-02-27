@@ -8,7 +8,8 @@ routerGet.get('/', (req, res) => {
   try {
     console.log('request recivida...', req.url)
 
-    const { gender, yearOfBirth } = req.query
+    // Filtracion por genero 
+    const { gender, yearOfBirth, name } = req.query
     if (gender) {
       const categoriaFiltrada = apimovies.filter(video => video.gender === gender)
       if (categoriaFiltrada) {
@@ -17,6 +18,7 @@ routerGet.get('/', (req, res) => {
         res.status(404).json({ message: "Error Not Font"})
       }
 
+      // filtracion por año
     } else if (yearOfBirth){
       const year = parseInt(yearOfBirth)
       const filtrarYears = apimovies.filter(video => video.yearOfBirth === year && video.yearOfBirth !== null)
@@ -25,11 +27,19 @@ routerGet.get('/', (req, res) => {
       } else {
         res.status(404).json({ message: "Erro Not Font"})
       }
-      
+      // mostrar por name
+    } else  if (name){
+      const filterName = apimovies.filter(video => video.name.toLowerCase().trim() === name.toLowerCase().trim())
+      if (filterName) {
+        res.status(200).json(filterName)
+      } else {
+        res.status(404).json({ message: "Erron Not Font"})
+      }
+
+      // mostrar toda la API
     } else {
       res.status(200).json(apimovies)
     }
-
 
   } catch (error) {
     res.status(500).json({ message: "Error interno en el servidor"})
