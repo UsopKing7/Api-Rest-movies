@@ -26,7 +26,7 @@ const validacion = z.object({
   actor: z.string().optional(),
   alternate_actors: z.array(z.string()).optional(),
   alive: z.boolean().optional(),
-  image: z.string().url().optional()
+  image: z.string().url().optional().nullable()
 });
 
 export default validacion

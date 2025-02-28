@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { Router } from 'express';
 import apimovies from '../api-movies/movies.json' with { type: 'json'}
+import validacion from './validaciones.js';
 
 const routerGet = Router()
 
@@ -49,6 +50,36 @@ routerGet.get('/:id', (req, res) => {
     res.status(404).json({ message: "error 404 not font"})
   }
 }) 
+
+// para eliminar 
+routerGet.delete('/:id', (req, res) => {
+  const { id } = req.params
+  const index = apimovies.findIndex(video => String(video.id) === id)
+  if (index !== -1) {
+    const videoDelete = apimovies.splice(index, 1)
+    return res.status(200).json(videoDelete[0])
+  } else {
+    return res.status(404).json({ message: 'video eliminado'})
+  }
+})
+
+//para actualisar
+routerGet.patch('/:id', (req, res) => {
+  try {
+    const { id } = req.params
+    const index = apimovies.findIndex(video => video.id.toString() === id);
+    if (index === -1) {
+      return res.status(404).json({ message: 'pelicula no encontrada'})
+    }
+
+    const data = validacion.parse(req.body)
+    apimovies[index] = {...apimovies[index], ...data}
+    res.status(200).json(apimovies[index])
+  } catch (error) {
+    res.status(404).json({ message: error})
+  }
+})
+
 
 routerGet.use((req, res) => {
   res.status(404).json({ message: "error 404"})
