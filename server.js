@@ -11,8 +11,7 @@ routes.forEach(routes => app.use('/movies', routes))
 
 // servidor escuchando en el puerto
 const port = process.env.PORT ?? 3333
-app.listen(port, () => {
-    console.log('Servidor => http://localhost:' + port)
+app.listen(port, '0.0.0.0', () => {
+    console.log('Servidor => http://0.0.0.0:' + port)
 })
-
 
