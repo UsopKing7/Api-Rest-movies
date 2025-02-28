@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { Router } from 'express';
 import apimovies from '../movies.json' with { type: 'json'}
+import validacion from './validaciones.js';
 
 const router = Router()
 
@@ -58,13 +59,16 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const newPeli = req.body
-  apimovies.push(newPeli)
-  res.status(201).json(newPeli)
+  try {
+    const newPeli = validacion.parse(req.body)
+    apimovies.push(newPeli)
+    res.status(201).json(newPeli)
+  } catch (error) {
+    res.status(400).json({ message: error.errors})
+  }
 })
 
 router.use((req, res) => {
   res.status(404).send('<h1> Error 404 Not Font </h1>')
 })
 export default router
-
