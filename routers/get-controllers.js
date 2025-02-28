@@ -41,14 +41,14 @@ routerGet.get('/', (req, res) => {
 
 routerGet.get('/:id', (req, res) => {
   const { id } = req.params
-  const videoId = apimovies.find(video => video.id === id)
+  const videoId = apimovies.filter(video => video.id === id);
   if (videoId) {
     console.log('peticion resivida.../movies'+ req.url)
     res.status(200).json(videoId)
   } else {
     res.status(404).json({ message: "error 404 not font"})
   }
-})
+}) 
 
 routerGet.use((req, res) => {
   res.status(404).json({ message: "error 404"})

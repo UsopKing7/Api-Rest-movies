@@ -9,7 +9,7 @@ const routerPatch = Router()
 routerPatch.patch('/:id', (req, res) => {
   try {
     const { id } = req.params
-    const index = apimovies.findIndex(video => video.id.trim().toLowerCase() === id.trim().toLowerCase());
+    const index = apimovies.findIndex(video => video.id === id);
     if (index === -1) {
       return res.status(404).json({ message: 'pelicula no encontrada'})
     }
