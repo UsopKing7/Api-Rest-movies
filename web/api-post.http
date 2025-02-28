@@ -2,31 +2,29 @@
 POST http://localhost:3333/movies
 Content-Type: application/json
 
-[
-  {
-    "id": "05bd5fd1-f347-45e6-8ec0-59b7f11c2aec",
-    "name": "Hardcore Henry",
-    "alternate_names": [],
-    "species": "human",
-    "gender": "male",
-    "house": "Ravenclaw",
-    "dateOfBirth": null,
-    "yearOfBirth": null,
-    "wizard": true,
-    "ancestry": "",
-    "eyeColour": "",
-    "hairColour": "",
-    "wand": {
-      "wood": "",
-      "core": "",
-      "length": null
-    },
-    "patronus": "",
-    "hogwartsStudent": true,
-    "hogwartsStaff": false,
-    "actor": "",
-    "alternate_actors": [],
-    "alive": true,
-    "image": ""
-  }
-]
+{
+  "id": "1a2b3c4d-5678-90ef-ghij-klmnopqrstuv",
+  "name": "Hardcore Henry",
+  "alternate_names": [],
+  "species": "human",
+  "gender": "male",
+  "house": "",
+  "dateOfBirth": null,
+  "yearOfBirth": null,
+  "wizard": false,
+  "ancestry": "",
+  "eyeColour": "",
+  "hairColour": "",
+  "wand": {
+    "wood": "",
+    "core": "",
+    "length": null
+  },
+  "patronus": "",
+  "hogwartsStudent": false,
+  "hogwartsStaff": false,
+  "actor": "Andrei Dementiev (cuerpo), Sharlto Copley (voz)",
+  "alternate_actors": [],
+  "alive": true,
+  "image": "https://m.media-amazon.com/images/I/51e9rXvt-lL.jpg"
+}
