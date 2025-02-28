@@ -2,6 +2,7 @@
 import { Router } from 'express';
 import apimovies from '../movies.json' with { type: 'json'}
 import validacion from './validaciones.js';
+import filtraciones from './filter.js';
 
 const router = Router()
 
