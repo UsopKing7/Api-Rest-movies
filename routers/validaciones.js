@@ -3,30 +3,30 @@
 import z from 'zod'
 
 const validacion = z.object({
-  id: z.string(),
-  name: z.string(),
+  id: z.string().optional(),
+  name: z.string().optional(),
   alternate_names: z.array(z.string()).optional(),
-  species: z.string(),
-  gender: z.string(),
-  house: z.string(),
-  dateOfBirth: z.string().nullable(),
-  yearOfBirth: z.number().nullable(),
-  wizard: z.boolean(),
-  ancestry: z.string(),
-  eyeColour: z.string(),
-  hairColour: z.string(),
+  species: z.string().optional(),
+  gender: z.string().optional(),
+  house: z.string().optional(),
+  dateOfBirth: z.string().nullable().optional(),
+  yearOfBirth: z.number().nullable().optional(),
+  wizard: z.boolean().optional(),
+  ancestry: z.string().optional(),
+  eyeColour: z.string().optional(),
+  hairColour: z.string().optional(),
   wand: z.object({
-    wood: z.string(),
-    core: z.string(),
-    length: z.number().nullable()
-  }),
-  patronus: z.string(),
-  hogwartsStudent: z.boolean(),
-  hogwartsStaff: z.boolean(),
-  actor: z.string(),
-  alternate_actors: z.array(z.string()),
-  alive: z.boolean(),
-  image: z.string().url()
+    wood: z.string().optional(),
+    core: z.string().optional(),
+    length: z.number().nullable().optional()
+  }).optional(),
+  patronus: z.string().optional(),
+  hogwartsStudent: z.boolean().optional(),
+  hogwartsStaff: z.boolean().optional(),
+  actor: z.string().optional(),
+  alternate_actors: z.array(z.string()).optional(),
+  alive: z.boolean().optional(),
+  image: z.string().url().optional()
 });
 
 export default validacion
