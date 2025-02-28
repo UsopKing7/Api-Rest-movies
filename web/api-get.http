@@ -2,7 +2,7 @@
 GET http://localhost:3333/movies
 
 ### para recuperar por Id
-GET http://localhost:3333/movies/4c7e6819-a91a-45b2-a454-f931e4a7cce3
+GET http://localhost:3333/9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8
 
 ### para recuperar por Genero
 GET http://localhost:3333/movies?gender=female
