@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import express from 'express';
-import routes from './routers/index.js';
+import routes from './src/routers/index.js';
 
 const app = express()
 app.use(express.json())
