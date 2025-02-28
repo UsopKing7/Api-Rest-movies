@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import z from 'zod';
+import z from 'zod'
 
 const validacion = z.object({
   id: z.string(),

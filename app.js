@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import express from 'express';
-import router from './routers/get-controllers.js';
+import router from './routers/controllers.js';
 
 const app = express()
 app.use(express.json())
