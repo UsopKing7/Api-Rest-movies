@@ -1,0 +1,30 @@
+### para actualizar una pelicula
+PATCH http://localhost:3333/movies/05bd5fd1-f347-45e6-8ec0-59b7f11c2aec
+Content-Type: application/json
+
+  {
+    "id": "05bd5fd1-f347-45e6-8ec0-59b7f11c2aec",
+    "name": "Stewart Ackerleyyyyy",
+    "alternate_names": [],
+    "species": "human",
+    "gender": "male",
+    "house": "Ravenclaw",
+    "dateOfBirth": null,
+    "yearOfBirth": null,
+    "wizard": true,
+    "ancestry": "",
+    "eyeColour": "",
+    "hairColour": "",
+    "wand": {
+      "wood": "",
+      "core": "",
+      "length": null
+    },
+    "patronus": "",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false,
+    "actor": "",
+    "alternate_actors": [],
+    "alive": true,
+    "image": "http://image.png"
+  }
