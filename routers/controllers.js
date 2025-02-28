@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import { Router } from 'express';
-import apimovies from '../movies.json' with { type: 'json'}
+import apimovies from '../api-movies/movies.json' with { type: 'json'}
 import validacion from './validaciones.js';
-import filtraciones from './filter.js';
 
 const router = Router()
 
@@ -59,6 +58,8 @@ router.get('/:id', (req, res) => {
   }
 })
 
+// POST
+
 router.post('/', (req, res) => {
   try {
     const newPeli = validacion.parse(req.body)
@@ -66,6 +67,19 @@ router.post('/', (req, res) => {
     res.status(201).json(newPeli)
   } catch (error) {
     res.status(400).json({ message: error.errors})
+  }
+})
+
+// PUT
+
+router.delete('/:id', (req, res) => {
+  const { id } = req.params
+  const eliminarId = apimovies.find(video => video.id === id)
+  if (eliminarId !== -1) {
+    apimovies.splice(eliminarId, 1)
+    res.status(200).json({ message: 'video eliminado'})
+  } else {
+    res.status(404).json({ message: 'video no se pudo eliminar'})
   }
 })
 
