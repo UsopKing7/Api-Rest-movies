@@ -80,8 +80,4 @@ routerGet.patch('/:id', (req, res) => {
   }
 })
 
-
-routerGet.use((req, res) => {
-  res.status(404).json({ message: "error 404"})
-})
 export default routerGet
