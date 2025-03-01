@@ -44,6 +44,10 @@ para poder hacer las filtraciones o `GET` `POST` `DELETE` `PATCH` realiza las pe
 
 ![alt](./img/extencion.png)
 
+## Vista en la web
+aqui podras ver la api de cada pelicula que muestra
+![alt](./img/vistaWeb.png)
+
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Si deseas mejorar este proyecto, puedes seguir estos pasos:
