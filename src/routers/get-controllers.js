@@ -27,7 +27,7 @@ routerGet.get('/', (req, res) => {
     }
 
   }else if (name) {
-    const filterName = apimovies.filter(video => video.name === name)
+    const filterName = apimovies.filter(video => video.name.toUpperCase() === name.toUpperCase())
     if (filterName) {
       console.log('peticion recivida.../movies'+ req.url)
       return res.status(200).json(filterName)
