@@ -14,9 +14,9 @@
   "license": "ISC",
   "author": "UsopKing7",
   "type": "module",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "node --watch app.js"
+    "dev": "node --watch server.js"
   },
   "dependencies": {
     "crypto": "^1.0.1",
