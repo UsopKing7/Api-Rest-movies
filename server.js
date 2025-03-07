@@ -3,6 +3,7 @@ import express from "express";
 import routes from "./src/controllers/index.js";
 import fsp from "fs/promises";
 import pc from 'picocolors';
+import { routerDb } from './src/modules/db.routes.js';
 
 const app = express();
 app.use(express.json());
@@ -17,6 +18,8 @@ app.get("/", async (req, res) => {
   }
 });
 
+app.use('/db', routerDb)
+
 app.use('/src/views', express.static("src/views"));
 // los Gets dando informcion al usuaior
 
@@ -27,7 +30,6 @@ app.use((req, res) => {
     res.status(404).json({ message: "Error 404 - Not Found" });
   });
   
-
 // servidor escuchando en el puerto
 const port = process.env.PORT ?? 3333;
 app.listen(port, "0.0.0.0", () => {
